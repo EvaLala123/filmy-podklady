@@ -1,0 +1,113 @@
+html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 16px/1.5 sans-serif;
+  line-height: 2;
+}
+header {
+  background-color: #e1def8ff;
+  padding: 10px;
+}
+
+footer {
+  background-color: #e1def8ff;
+  padding: 10px;
+  text-align: center;
+  padding: 10px auto;
+  color: #1f156b;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar__logo {
+  display: flex;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.site__pict {
+  width: 80px;
+  height: 50px;
+  background-image: url('./img/camIcon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.site__name {
+  text-align: left;
+  color: #1f156b;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navigation a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-right: 10px;
+  color: #1f156b;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+/* ----------- PRO MAIN ----------*/
+
+.main__home {
+  display: flex;
+}
+
+.content__left {
+  background-image: url('./img/4242799-01.jpg');
+  background-repeat: no-repeat;
+  min-height: 700px;
+  background-position: center;
+  background-size: cover;
+  flex-basis: 65%;
+}
+
+.content__right {
+  background-color: #1f156b;
+  color: azure;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 35%;
+  display: flex;
+}
+
+.content__text {
+  padding: 50px;
+  color: #e1def8ff;
+  text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+  .site__navigation {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .site__navigation {
+    display: none;
+  }
+  .content__left {
+    display: none;
+  }
+  .content__right {
+    flex-basis: 100%;
+  }
+}
