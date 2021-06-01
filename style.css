@@ -8,7 +8,6 @@ html {
 }
 
 body {
- 
   line-height: 2;
   font-family: 'Cantora One', sans-serif;
   font-size: 20px;
@@ -17,6 +16,10 @@ body {
 header {
   background-color: #e1def8ff;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 footer {
@@ -29,24 +32,29 @@ footer {
 
 .topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
+.topbar__navigation {
+  display: none;
+}
+
+.topbar__logo {
+  flex: 1;
+}
+
 .topbar__logo a {
-  display: flex;  
+  display: flex;
   justify-content: left;
   align-items: center;
   text-decoration: none;
-
 }
 
 .topbar__logo a:hover {
   text-decoration: underline;
 }
 
-
-.site__pict {
+.topbar__pict {
   width: 80px;
   height: 50px;
   background-image: url('./img/camIcon.png');
@@ -54,7 +62,7 @@ footer {
   background-repeat: no-repeat;
 }
 
-.site__name {
+.topbar__name {
   text-align: left;
   color: #1f156b;
   font-weight: bold;
@@ -69,7 +77,7 @@ footer {
   text-transform: uppercase;
   margin-right: 15px;
   color: #1f156b;
-font-size: 25px;
+  font-size: 25px;
 }
 
 .glass {
@@ -81,7 +89,23 @@ font-size: 25px;
   text-decoration: underline;
 }
 
+/* Hamburger menu */
 
+.topbar__mobile-nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 70px);
+  background-color: #f4f3ff;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.topbar__mobile-nav a {
+  display: block;
+  margin-bottom: 10px;
+}
 
 /* ----------- PRO MAIN ----------*/
 
@@ -90,6 +114,7 @@ font-size: 25px;
 }
 
 .content__left {
+  display: none;
   background-image: url('./img/4242799-01.jpg');
   background-repeat: no-repeat;
   min-height: 700px;
@@ -103,47 +128,45 @@ font-size: 25px;
   color: azure;
   justify-content: center;
   align-items: center;
-  flex-basis: 35%;
+  flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .content__text {
   /* font-family: 'Lato', sans-serif;  ---------------------*/
-  padding: 60px; 
+  padding: 60px;
   color: #e1def8ff;
   text-align: center;
 }
 
 @media screen and (min-width: 640px) {
-  .site__navigation {
-    display: flex;
+  .topbar__navigation {
+    display: block;
   }
-}
-
-@media screen and (max-width: 640px) {
-  .site__navigation {
+  .topbar__hamburger {
     display: none;
   }
   .content__left {
-    display: none;
+    display: block;
   }
   .content__right {
-    flex-basis: 100%;
+    flex-basis: 35%;
+  }
+  .topbar__mobile-nav {
+    display: none;
   }
 }
-
-
 
 /* ------------KVÍZ--------------------*/
 
 .main__quiz {
   width: 70%;
-  margin: 20px auto;  
+  margin: 20px auto;
 }
 
-.quiz__majorGenre {  
-  background-repeat: no-repeat;  
+.quiz__majorGenre {
+  background-repeat: no-repeat;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -156,24 +179,18 @@ font-size: 25px;
   background-color: blue;
 }
 
-.quiz__secondaryGenre {  
-  background-repeat: no-repeat;  
+.quiz__secondaryGenre {
+  background-repeat: no-repeat;
   display: flex;
   margin-bottom: 20px;
   border: solid 1px black;
-
 }
 
 .secondaryGenre__genre {
   flex-basis: 30%;
-   margin: 10px;
+  margin: 10px;
   background-color: yellow;
-
 }
-
-
-
-
 
 .slidecontainer {
   width: 100%;
@@ -186,8 +203,8 @@ font-size: 25px;
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider:hover {
@@ -199,35 +216,32 @@ font-size: 25px;
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #04AA6D;
+  background: #04aa6d;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #04AA6D;
+  background: #04aa6d;
   cursor: pointer;
 }
 
-
 /* ------------ movie (výsledek vyhledávání) ----------------- */
-
 
 .main__movie {
   width: 70%;
-  margin: 20px auto;  
+  margin: 20px auto;
 }
 
 .movie__box {
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
-  border: 1px solid #BFBFBF;
+  border: 1px solid #bfbfbf;
   background-color: white;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
-
 
 .movie__selected {
   flex-basis: 50%;
@@ -236,17 +250,12 @@ font-size: 25px;
   text-align: center;
 }
 
-
-
-
 .movie__selected--view {
 }
 
 .movie__selected--text {
   padding: 10px;
 }
-
-
 
 .movie__item {
   /* border: 1px solid black; */
@@ -257,18 +266,7 @@ font-size: 25px;
 }
 
 .movie__item--view {
-  
 }
 
 .movie__item--text {
-  
 }
-
-
-
-
-
-
-
-
-
