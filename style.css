@@ -20,6 +20,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10;
 }
 
 footer {
@@ -230,20 +231,26 @@ footer {
 /* ------------ movie (výsledek vyhledávání) ----------------- */
 
 .main__movie {
-  width: 70%;
-  margin: 20px auto;
+  background-color: #fffbf9;
+  position: relative;
 }
 
 .movie__box {
+  position: absolute;
+  top: 80px;
+  left: 15%;
+  width: 70%;
+
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
   border: 1px solid #bfbfbf;
-  background-color: white;
+  background-color: #e1def8ff;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
 
 .movie__selected {
+  border-radius: 10px;
   flex-basis: 50%;
   /* border: 1px solid black; */
   height: 700px;
@@ -251,22 +258,36 @@ footer {
 }
 
 .movie__selected--view {
+  background-color: yellow;
+  border-radius: 10px;
+  height: 300px;
+  background-image: url('./img/camIcon.png');
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .movie__selected--text {
   padding: 10px;
+  background-color: beige;
 }
 
 .movie__item {
   /* border: 1px solid black; */
-  height: 300px;
+  border-radius: 10px;
+  height: 200px;
   flex-basis: 50%;
-  height: 350px;
+  height: 150px;
   text-align: center;
 }
 
 .movie__item--view {
+  background-color: yellow;
+  background-image: url('./img/camIcon.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 10px;
 }
 
 .movie__item--text {
+  background-color: beige;
 }
